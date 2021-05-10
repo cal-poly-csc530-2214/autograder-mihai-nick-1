@@ -1,0 +1,107 @@
+SKETCH version 1.7.6
+Benchmark = ../sketch-frontend/src/test/sk/seq/miniTest1.sk
+[SATBackend] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[SATBackend] MAX LOOP UNROLLING = 8
+[SATBackend] MAX FUNC INLINING  = 5
+[SATBackend] After prog.accept(partialEval)
+[SATBackend] OFILE = null
+resolved cegis to path /home/nicholassheffler/.sketch/tmp/cegis
+[SATBackend] Launching: /home/nicholassheffler/.sketch/tmp/cegis --bnd-inbits 5 --boundmode CALLNAME --verbosity 3 --print-version -simiters 4 --print-cex --assumebcheck --bnd-inline-amnt 5 -angelictupledepth 1 -srctupledepth 2 -sprandbias 1 -numericalsolvermode ONLY_SMOOTHING -numtries 1 -conflictcutoff 1 -maxrestarts 10 -costoption 1 -o /home/nicholassheffler/.sketch/tmp/miniTest1.sk/solution0-0 /home/nicholassheffler/.sketch/tmp/miniTest1.sk/input0.tmp 
+Overriding inputs with 5
+boundmode = CALLNAME
+assuming  bounds checks
+numerical solver mode = ONLY_SMOOTHING
+SOLVER RAND SEED = 1620679371
+Reading SKETCH Program in File /home/nicholassheffler/.sketch/tmp/miniTest1.sk/input0.tmp
+* before  EVERYTHING: reverse::SPEC nodes = 6	 reverseSketch::SKETCH nodes = 11
+ INBITS = 5
+ CBITS  = 5
+ input_ints = 0 	 input_bits = 4
+* Final Problem size: Problem nodes = 12
+  # OF CONTROLS:    2
+ control_ints = 0 	 control_bits = 2 	 control_floats = 0
+inputSize = 4	ctrlSize = 2
+Random seeds = 1
+BEG CHECK
+ * After optims it became = 8 was 12
+The spec and sketch can not be made to be equal. _p_out_reverse_ANONYMOUS
+END CHECK
+********  0	ftime= 0	ctime= 0
+BEG FIND
+ intsize = 2
+ input in_2_4_idx_3_0 has value 12= (1)
+ input in_2_4_idx_1_0 has value 12= (1)
+ input in_2_4_idx_0_0 has value 13= (0)
+ input in_2_4_idx_2_0 has value 13= (0)
+ * After optims it became = 7 was 12
+* TIME TO ADD INPUT :  0 ms 
+ Removed 2 clauses
+DECISIONS START = 0
+END FIND
+BEG CHECK
+ * After optims it became = 7 was 12
+The spec and sketch can not be made to be equal. _p_out_reverse_ANONYMOUS
+END CHECK
+********  1	ftime= 0	ctime= 0
+BEG FIND
+ intsize = 2
+ input in_2_4_idx_3_0 has value 12= (0)
+ input in_2_4_idx_1_0 has value 13= (1)
+ input in_2_4_idx_0_0 has value 13= (1)
+ input in_2_4_idx_2_0 has value 13= (1)
+ * After optims it became = 5 was 12
+* TIME TO ADD INPUT :  0 ms 
+DECISIONS START = 3
+END FIND
+BEG CHECK
+ * After optims it became = 4 was 12
+END CHECK
+********  2	ftime= 0	ctime= 0
+ *GOT THE CORRECT ANSWER IN 3 iterations.
+ *FIND TIME 0 CHECK TIME 0 TOTAL TIME 0
+VALUES H__0: 0, H__1: 1, 
+RESULT = 2  
+**ROUND 0 : 0 Round time:  0.002 ms 
+RNDDEG = -1
+return 0
+
+----- Statistics -----
+Total elapsed time (ms):  0.005
+Model building time (ms): 0
+Solution time (ms):       0.002
+Max virtual mem (bytes):  91754496
+Max resident mem (bytes): 2060288
+Max private mem (bytes):  89960448
+ALL CORRECT
+[SATBackend] Stats for last run:
+      [solution stats]
+      successful? ---------------------> true
+      elapsed time (s) ----------------> 0.042
+      model building time (s) ---------> 0.0
+      solution time (s) ---------------> 0.0
+      max memory usage (MiB) ----------> 87.50391
+      [SAT-specific solution stats]
+      initial number of nodes ---------> 11
+      number of nodes after opts ------> 12
+      number of controls --------------> 2
+      total number of control bits ----> 2
+
+[SATBackend] Solver exit value: 0
+/* BEGIN PACKAGE ANONYMOUS*/
+/*miniTest1.sk:6*/
+
+void reverse (bit[4] in, ref bit _out)/*miniTest1.sk:6*/
+{
+  _out = in[3];
+  return;
+}
+/*miniTest1.sk:1*/
+
+void reverseSketch (bit[4] in, ref bit _out)  implements reverse/*miniTest1.sk:1*/
+{
+  _out = in[3];
+  return;
+}
+/* END PACKAGE ANONYMOUS*/
+[SKETCH] DONE
+Total time = 397
